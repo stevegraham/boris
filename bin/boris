@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby -Ku
+
+require 'boris'
+require 'hirb'
+
+module Boris
+  module Console
+    include Hirb::Console
+    def inspect
+      cols = [:route_id, :destination, :estimated_wait, :scheduled_time]
+      table arrivals, description: false, fields: cols,
+            headers: Hash[cols.map { |c| [c, ActiveSupport::Inflector.titleize(c)] }]
+
+    end
+  end
+end
+
+Boris::BusStop.instance_eval { include Boris::Console }
+
+if ARGV.any?
+  Boris::BusStop.find(ARGV.first).inspect
+else
+  puts "Usage: ./boris <bus_stop_id>"
+end
+

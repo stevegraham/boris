@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform                    = Gem::Platform::RUBY
   s.name                        = 'boris'
-  s.version                     = '0.0.1'
+  s.version                     = '0.1.0'
   s.summary                     = 'TFL (unoffical) API Ruby bindings'
   s.description                 = 'Ruby API bindings and CLI utility to get Boris Bike docking station status, Bus and Tube times.'
 
@@ -12,8 +12,9 @@ Gem::Specification.new do |s|
   s.email                       = 'sjtgraham@mac.com'
   s.homepage                    = 'http://github.com/stevegraham/boris'
 
-  s.add_dependency                'httparty',       '~> 0.10.2'
+  s.add_dependency                'httparty',      '~> 0.10.2'
   s.add_dependency                'activesupport', '>= 2.2.1'
+  s.add_dependency                'hirb',          '~> 0.7.1'
 
   s.add_development_dependency    'rspec',          '>= 2.12.0'
   s.add_development_dependency    'mocha',          '>= 0.13.2'
@@ -21,5 +22,7 @@ Gem::Specification.new do |s|
 
   s.files                       = Dir['README.md', 'lib/**/*']
   s.require_path                = 'lib'
+
+  s.executables << 'boris'
 end
 
