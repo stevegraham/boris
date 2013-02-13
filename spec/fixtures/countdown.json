@@ -1,0 +1,46 @@
+{
+  "lastUpdated":"14:10",
+  "filterOut":[
+
+  ],
+  "arrivals":[
+    {
+      "routeId":"25",
+      "routeName":"25",
+      "destination":"Ilford",
+      "estimatedWait":"due",
+      "scheduledTime":"14:11",
+      "isRealTime":true,
+      "isCancelled":false
+    },
+    {
+      "routeId":"98",
+      "routeName":"98",
+      "destination":"Holborn",
+      "estimatedWait":"2 min",
+      "scheduledTime":"14:12",
+      "isRealTime":true,
+      "isCancelled":false
+    },
+    {
+      "routeId":"390",
+      "routeName":"390",
+      "destination":"Archway",
+      "estimatedWait":"2 min",
+      "scheduledTime":"14:13",
+      "isRealTime":true,
+      "isCancelled":false
+    }
+  ],
+  "serviceDisruptions":{
+    "infoMessages":[
+      "Using Oyster or Contactless cards to pay your bus fare? Make sure you pay the right fare by only touching one card on the reader when you board."
+    ],
+    "importantMessages":[
+
+    ],
+    "criticalMessages":[
+
+    ]
+  }
+}
