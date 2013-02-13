@@ -7,7 +7,14 @@ describe Boris::BusStop do
     when Array
       obj.map { |obj| deep_underscore_keys obj }
     when Hash
-      Hash[obj.map { |k,v| [ActiveSupport::Inflector.underscore(k).to_sym, deep_underscore_keys(v)] }]
+      obj = obj.map do |k,v|
+        k = ActiveSupport::Inflector.underscore(k).to_sym
+        v = deep_underscore_keys v
+
+        [k, v]
+      end
+
+      Hash[obj]
     else
       obj
     end
@@ -44,7 +51,7 @@ describe Boris::BusStop do
   [:last_updated, :filter_out, :arrivals, :service_disruptions].each do |attr|
     describe "#{attr}" do
       it 'returns the value for the API response with keys underscored and symbolised' do
-        hash = boris.send :deep_underscore_keys, json
+        hash = deep_underscore_keys json
         boris.send(attr).should == hash[attr]
       end
     end
